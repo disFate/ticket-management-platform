@@ -1,0 +1,7 @@
+{
+  "/exception": {
+    "target": "https://tcs-api.beaconfireinc.com",
+    "secure": false,
+    "changeOrigin": true
+  }
+}
