@@ -1,0 +1,7 @@
+:host ::ng-deep p-menubarsub {
+  width: 100%;
+}
+
+:host ::ng-deep .p-menuitem-link-active span {
+  color: #3b82f6;
+}

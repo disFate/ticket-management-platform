@@ -1,0 +1,58 @@
+
+<div class="body-container">
+  <div class="header">
+    <h1>All Users</h1>
+    <div class="p-input-icon-left">
+      <i class="pi pi-search"></i>
+      <input
+        type="text"
+        pInputText
+        [(ngModel)]="searchText"
+        placeholder="earch user name or email"
+        class="search"
+      >
+    </div>
+  </div>
+  <p-table
+    [value]="users"
+    [tableStyle]="{ 'min-width': '50rem' }"
+  >
+    <ng-template pTemplate="header">
+      <tr>
+        <th pSortableColumn="firstName">
+          Name <p-sortIcon field="firstName"></p-sortIcon>
+        </th>
+        <th>Email</th>
+        <th>Role</th>
+      </tr>
+    </ng-template>
+
+    <ng-template pTemplate="body" let-user>
+      <tr (click)="onSelectUser($event, user)">
+        <td>
+          {{ (user.preferredName || user.firstName) + " " + user.lastName }}
+        </td>
+        <td>{{ user.email }}</td>
+        <td class="role-cell">
+          {{ user.roles[0] }}
+          <p-button
+            label="Edit"
+            [text]="true"
+            icon="pi pi-user-edit"
+            class="edit-button"
+            (click)="show(user)"
+          ></p-button>
+        </td>
+      </tr>
+    </ng-template>
+  </p-table>
+</div>
+
+<p-sidebar [(visible)]="sidebarVisible" position="right">
+  <app-user-detail
+    #userDetail
+    [user]="selectedUser"
+    [userId]="selectedUser?.id"
+    (notify)="onNotify($event)"
+  ></app-user-detail>
+</p-sidebar>
