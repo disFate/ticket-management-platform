@@ -13,6 +13,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { TicketModule } from './features/ticket/ticket.module';
 import { AdminModule } from './features/admin/admin.module';
 import { CoreModule } from './core/core.module';
+import { Router } from '@angular/router';
 
 export function initializeApp(authService: AuthService, location: Location) {
   return async (): Promise<any> => {
@@ -20,24 +21,6 @@ export function initializeApp(authService: AuthService, location: Location) {
     const currentPath = location.path();
 
     if (currentPath.startsWith('/callback')) {
-      const url = document.location.href;
-      const urlObj = new URL(url);
-      const searchParams = urlObj.searchParams;
-
-      const code = searchParams.get('code');
-      const org_id = searchParams.get('org_id');
-      const state = searchParams.get('state');
-
-      if (code && org_id && state) {
-        const res = await firstValueFrom(
-          authService.getToken(code, org_id, state),
-        );
-        localStorage.setItem('token', res.data.accessToken);
-        window.location.href = '/dashboard';
-      } else {
-        console.error('Missing required query parameters.');
-      }
-
       return;
     }
     const user = await firstValueFrom(authService.fetchCurrentUser());

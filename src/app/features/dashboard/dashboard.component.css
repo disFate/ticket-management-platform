@@ -1,0 +1,76 @@
+/* Dashboard Styles */
+.dashboard {
+  display: flex;
+  flex-direction: column;
+  margin: 20px;
+}
+
+.tickets-section {
+  margin-bottom: 20px;
+}
+
+.charts-section {
+  display: flex;
+  justify-content: space-between;
+}
+
+.task-by-priority-chart,
+.task-by-status-chart {
+  width: 48%;
+  display: flex;
+  flex-direction: column;
+}
+.chart {
+  display: flex;
+  justify-content: start;
+  gap: 10px;
+}
+
+/* Table Styles */
+.p-datatable .p-datatable-thead > tr > th {
+  background-color: #f4f4f4; /* Header background color */
+  color: #333; /* Header text color */
+  font-weight: bold;
+}
+
+.p-datatable .p-datatable-tbody > tr > td {
+  padding: 10px; /* Cell padding */
+}
+
+.p-datatable .p-datatable-tbody > tr:nth-child(even) {
+  background-color: #fafafa; /* Zebra striping for rows */
+}
+
+/* Chart Styles */
+.p-chart {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); /* Add shadow for depth */
+  border-radius: 4px; /* Optional: for rounded corners */
+  padding: 20px; /* Padding around the chart */
+}
+
+/* Status Styles */
+.status-statistics {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.status-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10px;
+}
+
+.status-label {
+  font-size: 14px;
+  color: #555;
+  margin-bottom: 5px;
+}
+
+.status-value {
+  font-size: 18px;
+  font-weight: bold;
+  color: #333;
+}

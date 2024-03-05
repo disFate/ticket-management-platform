@@ -1,1 +1,11 @@
-<p-tag [severity]="getStatusClass(status)" [value]="status"></p-tag>
+<span
+  [ngClass]="{
+    open: status === 'Open',
+    closed: status === 'Closed',
+    pending: status === 'Waiting for Response',
+    archived: status === 'Archived',
+    taken: status === 'Taken'
+  }"
+  class="status-label"
+  >{{ status }}</span
+>

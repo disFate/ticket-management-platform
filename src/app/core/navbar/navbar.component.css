@@ -5,3 +5,7 @@
 :host ::ng-deep .p-menuitem-link-active span {
   color: #3b82f6;
 }
+
+.nav {
+  width: 100%;
+}

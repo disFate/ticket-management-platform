@@ -4,7 +4,9 @@
     <i class="pi pi-search"></i>
     <input
       type="text"
+      [(ngModel)]="searchValue"
       pInputText
+      (input)="onInputChange()"
       placeholder="{{ placeholder }}"
       class="search-content"
     />

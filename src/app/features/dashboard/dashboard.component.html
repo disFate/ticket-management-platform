@@ -1,1 +1,65 @@
-<p>dashboard works!</p>
+<!-- Dashboard Component -->
+<div class="dashboard">
+  <div class="tickets-section">
+    <p-table [value]="tickets">
+      <ng-template pTemplate="header">
+        <tr>
+          <th>Ticket Number</th>
+          <th>Ticket Name</th>
+          <th>Report Time</th>
+          <th>Due</th>
+          <th>Assignee</th>
+          <th>Report By</th>
+          <th>Status</th>
+          <th>Priority</th>
+        </tr>
+      </ng-template>
+      <ng-template pTemplate="body" let-ticket>
+        <tr>
+          <td>{{ ticket.ticketNumber }}</td>
+          <td>{{ ticket.ticketName }}</td>
+          <td>{{ ticket.reportTime }}</td>
+          <td>{{ ticket.due }}</td>
+          <td>{{ ticket.assignee }}</td>
+          <td>{{ ticket.reportBy }}</td>
+          <td>{{ ticket.status }}</td>
+          <td>{{ ticket.priority }}</td>
+        </tr>
+      </ng-template>
+    </p-table>
+  </div>
+  <div class="charts-section">
+    <div class="task-by-priority-chart">
+      <div class="status-statistics">
+        <h1>Task by Priority</h1>
+        <p-chart type="pie" [data]="formattedTaskByPriority"></p-chart>
+      </div>
+    </div>
+
+    <div class="task-by-status-chart">
+      <h1>Task by Status</h1>
+      <div class="chart">
+        <div class="status-item">
+          <span class="status-label">Open</span>
+          <span class="status-value">0</span>
+        </div>
+        <div class="status-item">
+          <span class="status-label">Taken</span>
+          <span class="status-value">2</span>
+        </div>
+        <div class="status-item">
+          <span class="status-label">Waiting for Response</span>
+          <span class="status-value">2</span>
+        </div>
+        <div class="status-item">
+          <span class="status-label">Closed</span>
+          <span class="status-value">2</span>
+        </div>
+        <div class="status-item">
+          <span class="status-label">Archived</span>
+          <span class="status-value">2</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,3 +1,14 @@
 .ticket-table {
   margin: 20px;
 }
+
+.ticket-filter {
+  display: flex;
+  justify-content: start;
+  gap: 10px;
+  margin: 20px;
+}
+
+.no-ticket-found {
+  text-align: center;
+}

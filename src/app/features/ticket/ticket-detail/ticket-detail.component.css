@@ -1,0 +1,18 @@
+.ticket-detail {
+  display: flex;
+  justify-content: start;
+  align-items: flex-start;
+  height: 100vh;
+  flex-wrap: wrap;
+}
+
+.form-group {
+  flex-basis: 50%;
+  max-width: 50%;
+  padding: 2px;
+}
+
+p-dropdown {
+  margin: 20px 0px;
+  width: auto;
+}

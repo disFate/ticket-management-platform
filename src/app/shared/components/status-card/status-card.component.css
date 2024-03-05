@@ -1,0 +1,27 @@
+.status-label {
+  padding: 5px 10px;
+  border-radius: 5px;
+  color: #ffffff; /* 文字颜色 */
+  display: inline-block;
+  font-size: 0.875rem;
+}
+
+.open {
+  background-color: #35b90d; /* 绿色背景 */
+}
+
+.closed {
+  background-color: #83888e; /* 灰色背景 */
+}
+
+.pending {
+  background-color: #f05f05; /* 橙色背景 */
+}
+
+.archived {
+  background-color: #f03b3b; /* 红色背景 */
+}
+
+.taken {
+  background-color: #0a68dc; /* 蓝色背景 */
+}
