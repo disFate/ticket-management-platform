@@ -5,5 +5,5 @@ export const environment = {
   baseUrl: '',
   authRedirectUrl: 'http://localhost:4200/callback',
   defaultUrl: '/dashboard',
-  envName: 'local'
-}
+  envName: 'local',
+};

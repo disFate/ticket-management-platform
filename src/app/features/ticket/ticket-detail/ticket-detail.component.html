@@ -1,0 +1,85 @@
+<!-- In your component template file (e.g., ticket.component.html) -->
+<div class="ticket-detail">
+  <p>{{ ticket?.ticketName }}</p>
+  <div class="form-group">
+    <p class="block">Status</p>
+    <p-dropdown
+      id="status"
+      [options]="ticketConfig?.statusList"
+      [placeholder]="ticket?.status"
+      (onChange)="onEditStatus($event)"
+    ></p-dropdown>
+  </div>
+
+  <div class="form-group">
+    <p class="block">Priority</p>
+    <p-dropdown
+      id="priority"
+      [options]="ticketConfig?.priorityList"
+      [placeholder]="ticket?.priority"
+      (onChange)="onEditPriority($event)"
+    ></p-dropdown>
+  </div>
+
+  <!-- ... other fields -->
+
+  <div class="form-group">
+    <p class="block">Ticket Number</p>
+    <p>{{ ticket?.ticketNumber }}</p>
+  </div>
+
+  <div class="form-group">
+    <p class="block">External Reference ID</p>
+    <p>{{ ticket?.externalRefId }}</p>
+  </div>
+
+  <div class="form-group">
+    <p class="block">Report By</p>
+    <p>{{ ticket?.reportBy }}</p>
+  </div>
+
+  <div class="form-group">
+    <p class="block">Report Date Time</p>
+    <p>{{ ticket?.reportDateTime }}</p>
+  </div>
+
+  <div class="form-group">
+    <p class="block">Due Date Time</p>
+    <p>{{ ticket?.dueDateTime ? ticket?.dueDateTime : "No Due Set Ye" }}</p>
+  </div>
+
+  <div class="form-group">
+    <p class="block">Ticket ID</p>
+    <p>{{ ticket?.ticketId }}</p>
+  </div>
+
+  <div class="form-group block">
+    <p class="block">Assignee</p>
+    <p-dropdown
+      id="assignee"
+      [options]="assigneeList"
+      [placeholder]="ticket?.assignee?.name"
+      (onChange)="onEditAssignee($event)"
+      optionLabel="name"
+    ></p-dropdown>
+  </div>
+
+  <!-- If you have error details to show -->
+  <div class="error-details">
+    <p>Field: RefAllocID</p>
+    <p>Value: "alert3-2-2024-01-08-22:43:42.983137"</p>
+  </div>
+
+  <div class="form-group">
+    <label for="comments">Comments</label>
+    <!-- <p-inputTextarea
+      id="comments"
+      [(ngModel)]=""
+      rows="5"
+      cols="30"
+      placeholder="Enter your comments"
+    ></p-inputTextarea> -->
+  </div>
+
+  <p-button label="Add Comment" icon="pi pi-check"></p-button>
+</div>

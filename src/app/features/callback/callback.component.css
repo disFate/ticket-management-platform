@@ -1,0 +1,12 @@
+.loading-page {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  min-height: 100vh;
+}
+
+.loading-picture {
+  width: 70px;
+}

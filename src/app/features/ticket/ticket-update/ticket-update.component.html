@@ -1,0 +1,6 @@
+<p-dialog [header]="header" [visible]="true" [style]="{ width: '20vw' }">
+  <h1>Update {{ title }}</h1>
+  <h2>Select a new {{ title }}</h2>
+  <p-menu [popup]="true" [model]="menuItem"></p-menu>
+  <p-button (onClick)="onConfirm()">confirm</p-button>
+</p-dialog>
